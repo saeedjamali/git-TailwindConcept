@@ -8,16 +8,24 @@
   </head>
   <body>
     <div
-      class="container w-4/5 bg-slate-400 mx-auto flex flex-col align-middle justify-between"
+      class="container w-4/5 bg-slate-400  flex flex-col align-middle justify-between"
     >
       <h1 class="w-100 text-center">Hi Tailwind</h1>
-      <div class="flex ">
-        <section class="bg-blue-500 w-24 h-24 flex-1">Blue</section>
-        <section class="bg-yellow-300 w-24 h-24">Yellow</section>
-        <section class="bg-red-600 w-24 h-24">Red</section>
-        <section class="bg-green-500 w-24 h-24  flex-1">Green</section>
+      <div class="flex flex-row hover:flex-col">
+        <section class="bg-pink-700 sm:bg-purple-500 md:bg-red-600 lg:bg-green-500 xl:bg-blue-900 basis-1/4 h-24 flex-1">Blue</section>
+        <section class="bg-yellow-300 basis-1/2 h-24">Yellow</section>
+        <section class="bg-red-600  basis-1/8 h-24">Red</section>
+        <section class="bg-green-500  basis-1/8 h-24  flex-1">Green</section>
       </div>
       <button class="btn-primary">Submit</button>
+    </div>
+
+
+    <div class="grid grid-cols-6 gap-4 bg-slate-400 my-8">
+      <div class="col-start-2 col-span-4 bg-blue-500 rounded-8">01</div>
+      <div class="col-start-1 col-end-3 bg-blue-500">02</div>
+      <div class="col-end-7 col-span-3 bg-blue-500">03</div>
+      <div class="col-start-1 col-end-7 bg-blue-500">04</div>
     </div>
   </body>
 </html>
