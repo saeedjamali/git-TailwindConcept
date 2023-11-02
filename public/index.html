@@ -1,52 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./build/tailwind.css" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./build/tailwind.css" />
-  <title>Document</title>
-</head>
-
-<body>
-  <div class="container w-full  bg-slate-400  flex flex-col align-middle justify-between">
-    <h1 class="w-screen text-center">Hi Tailwind</h1>
-    <div class="flex flex-row hover:flex-col">
-      <section class="bg-pink-700 sm:bg-purple-500 md:bg-red-600 lg:bg-green-500 xl:bg-blue-900 basis-1/4 h-24 flex-1">
-        Blue</section>
-      <section class="bg-yellow-300 basis-1/2 h-24">Yellow</section>
-      <section class="bg-red-600  basis-1/8 h-24">Red</section>
-      <section class="bg-green-500  basis-1/8 h-24  flex-1">Green</section>
-    </div>
-    <button class="btn-primary">Submit</button>
-  </div>
-
-
-  <div class="grid grid-cols-6 gap-4 bg-slate-400 my-8">
-    <div class="col-start-2 col-span-4 bg-blue-500 rounded-8">01</div>
-    <div class="col-start-1 col-end-3 bg-blue-500">02</div>
-    <div class="col-end-7 col-span-3 bg-blue-500">03</div>
-    <div class="col-start-1 col-end-7 bg-blue-500">04</div>
-  </div>
-
-  <div class="container w-full bg-slate-100 flex items-center justify-center p-4">
-    <div class="w-auto">
-      <button class="bg-blue-600 text-white rounded-md py-2 px-4 flex "> Go to Menu
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="w-6 h-6 ml-4 stroke-cyan-100 hover:rotate-180 transition-all ease-in-out delay-200">
-          <path class="ml-4" stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-        </svg>
-      </button>
-      <div class="w-full bg-white mt-1 rounded-md overflow-hidden">
-        <a href="" class="block px-8 py-4 hover:bg-slate-300 hover:text-slate-900">Profile</a>
-        <a href="" class="block px-8 py-4 hover:bg-slate-300">Home</a>
-        <a href="" class="block px-8 py-4 hover:bg-slate-300">Setting</a>
-
+  <body>
+    <div
+      class="container w-full bg-slate-400 flex flex-col align-middle justify-between"
+    >
+      <h1 class="w-screen text-center">Hi Tailwind</h1>
+      <div class="flex flex-row hover:flex-col">
+        <section
+          class="bg-pink-700 sm:bg-purple-500 md:bg-red-600 lg:bg-green-500 xl:bg-blue-900 basis-1/4 h-24 flex-1"
+        >
+          Blue
+        </section>
+        <section class="bg-yellow-300 basis-1/2 h-24">Yellow</section>
+        <section class="bg-red-600 basis-1/8 h-24">Red</section>
+        <section class="bg-green-500 basis-1/8 h-24 flex-1">Green</section>
       </div>
-
+      <button class="btn-primary">Submit</button>
     </div>
-  </div>
 
-</body>
+    <div class="grid grid-cols-6 gap-4 bg-slate-400 my-8">
+      <div class="col-start-2 col-span-4 bg-blue-500 rounded-8">01</div>
+      <div class="col-start-1 col-end-3 bg-blue-500">02</div>
+      <div class="col-end-7 col-span-3 bg-blue-500">03</div>
+      <div class="col-start-1 col-end-7 bg-blue-500">04</div>
+    </div>
 
+    <div
+      x-data="{isOpen:false}"
+      class="container relative w-full bg-slate-100 flex items-center justify-center p-4"
+    >
+      <div
+        @click="isOpen=false"
+        class="w-full h-full absolute inset-0 bg-blue-400 opacity-50"
+      ></div>
+      <div class="w-auto z-10 relative">
+        <button
+          @click="isOpen=!isOpen"
+          class="bg-blue-600 text-white rounded-md py-2 px-4 flex"
+        >
+          Go to Menu
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 ml-4 stroke-cyan-100 hover:rotate-180 transition-all ease-in-out delay-200"
+          >
+            <path
+              class="ml-4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+            />
+          </svg>
+        </button>
+        <div
+          x-show="isOpen"
+          class="w-full bg-white mt-1 rounded-md overflow-hidden"
+        >
+          <a
+            href=""
+            class="block px-8 py-4 hover:bg-slate-300 hover:text-slate-900"
+            >Profile</a
+          >
+          <a href="" class="block px-8 py-4 hover:bg-slate-300">Home</a>
+          <a href="" class="block px-8 py-4 hover:bg-slate-300">Setting</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
 </html>
